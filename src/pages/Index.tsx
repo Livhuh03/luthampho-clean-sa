@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/ProductCard";
 import { FeatureCard } from "@/components/FeatureCard";
-import heroImage from "@/assets/hero-cleaning-products.jpg";
+import heroImage from "@/assets/products-5l-containers.png";
+import everSparklingImage from "@/assets/ever-sparkling-dish-liquid.png";
+import lovelyBubblesImage from "@/assets/lovely-bubbles-foam-bath.png";
+import ceoTeamImage from "@/assets/ceo-founder-team.png";
 
 // Icons as emoji for simplicity and better performance
 const DishIcon = () => <span>🧽</span>;
@@ -80,19 +83,22 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <ProductCard
-              name="Dishwasher Liquid"
-              description="Powerful, gentle, and eco-conscious."
+              name="Ever Sparkling Dish Washing Liquid"
+              description="Powerful cleaning with a refreshing scent. Gentle on hands."
               icon={<DishIcon />}
+              image={everSparklingImage}
               sizes={[
                 { size: "750ml", price: "R28.99" },
                 { size: "1 Litre", price: "R39.99" },
+                { size: "5 Litre", price: "R89.99" },
               ]}
             />
             
             <ProductCard
-              name="B'Bath & Shower Gel"
-              description="Refresh your skin with our nourishing body wash."
+              name="Lovely Bubbles Foam Bath"
+              description="Luxurious lavender-scented foam bath for everyday relaxation."
               icon={<ShowerIcon />}
+              image={lovelyBubblesImage}
               sizes={[
                 { size: "1 Litre", price: "R39.99" },
                 { size: "5 Litre", price: "R89.99" },
@@ -136,6 +142,38 @@ const Index = () => {
               title="Quality Guaranteed"
               description="Premium quality you can trust and rely on"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* About Our Leadership */}
+      <section className="py-16 px-4 bg-secondary/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <span className="mr-2">👥</span>
+              Meet Our Leadership
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Dedicated to providing quality cleaning solutions for South Africa
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <div className="bg-gradient-card rounded-lg p-8 shadow-soft max-w-2xl">
+              <img 
+                src={ceoTeamImage} 
+                alt="Luthampho Holdings CEO and founding team" 
+                className="w-full h-80 object-cover rounded-lg mb-6"
+              />
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-foreground mb-2">Our Founding Team</h3>
+                <p className="text-muted-foreground">
+                  Committed to manufacturing premium, eco-friendly cleaning products 
+                  that are safe for families and the environment.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

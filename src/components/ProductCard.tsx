@@ -9,15 +9,26 @@ interface ProductCardProps {
     price: string;
   }[];
   icon: React.ReactNode;
+  image?: string;
 }
 
-export function ProductCard({ name, description, sizes, icon }: ProductCardProps) {
+export function ProductCard({ name, description, sizes, icon, image }: ProductCardProps) {
   return (
     <Card className="h-full bg-gradient-card shadow-soft hover:shadow-strong transition-all duration-300 transform hover:scale-105 border-0">
       <CardHeader className="text-center pb-4">
-        <div className="mx-auto mb-4 text-4xl text-sa-blue">
-          {icon}
-        </div>
+        {image ? (
+          <div className="mx-auto mb-4 w-24 h-24 rounded-lg overflow-hidden">
+            <img 
+              src={image} 
+              alt={name} 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ) : (
+          <div className="mx-auto mb-4 text-4xl text-sa-blue">
+            {icon}
+          </div>
+        )}
         <CardTitle className="text-xl text-foreground mb-2">{name}</CardTitle>
         <p className="text-muted-foreground text-sm">{description}</p>
       </CardHeader>
